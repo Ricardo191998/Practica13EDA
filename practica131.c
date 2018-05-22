@@ -42,5 +42,5 @@ int main(){
     calculoMatriz(a,b,c);
     terminar=omp_get_wtime( );
 
-    printf("TIEMPO=%lf\n",empezar-terminar);
+    printf("TIEMPO=%lf\n",terminar-empezar);
 }

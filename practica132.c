@@ -1,5 +1,8 @@
 #include<stdio.h>
 #include<omp.h>
+#include <stdlib.h>
+#define NG 5
+#define N 6
 
 for(i=0; i<NG; i++)
 histo[i] = 0;
@@ -19,4 +22,18 @@ for(i=0; i< NG; i++)
 for( i=0 ; i < NG ; i++)
 histo[i]+=histop[i];
 }
+}
+
+int main(){
+  int IMA[N][N];
+  for(int n=0 ; n<N;n++){
+      for(int j=0 ; j<N; j++)
+          IMA[n][j] = rand() % (N-1);
+  }
+  empezar=omp_get_wtime( );
+  calculaHisto(IMA);
+  terminar=omp_get_wtime( );
+
+  printf("TIEMPO=%lf\n",terminar-empezar);
+
 }
